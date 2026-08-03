@@ -2,12 +2,12 @@ import streamlit as st
 import joblib
 import re
 import string
+from pathlib import Path
 
-# ------------------------------
-# Load Model
-# ------------------------------
-model = joblib.load("models/sentiment_model.pkl")
-tfidf = joblib.load("models/tfidf_vectorizer.pkl")
+BASE_DIR = Path(__file__).resolve().parent
+
+model = joblib.load(BASE_DIR / "models" / "sentiment_model.pkl")
+tfidf = joblib.load(BASE_DIR / "models" / "tfidf_vectorizer.pkl")
 
 # ------------------------------
 # Page Config
